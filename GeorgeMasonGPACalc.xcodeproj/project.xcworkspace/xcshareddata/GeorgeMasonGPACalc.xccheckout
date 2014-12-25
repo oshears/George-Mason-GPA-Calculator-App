@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>7473D5BA-3593-471F-B582-D6E422440E2D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GeorgeMasonGPACalc</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>044FC199C0898A6C995EDF7AC0A76A122BEF625B</key>
+		<string>https://github.com/yoze15/George-Mason-GPA-Calculator-App.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GeorgeMasonGPACalc.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>044FC199C0898A6C995EDF7AC0A76A122BEF625B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/yoze15/George-Mason-GPA-Calculator-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>044FC199C0898A6C995EDF7AC0A76A122BEF625B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>044FC199C0898A6C995EDF7AC0A76A122BEF625B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GeorgeMasonGPACalc</string>
+		</dict>
+	</array>
+</dict>
+</plist>

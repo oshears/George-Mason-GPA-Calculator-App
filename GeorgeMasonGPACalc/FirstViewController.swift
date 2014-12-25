@@ -8,8 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    //Table on the first view
     @IBOutlet weak var tblCourses: UITableView!
     
     
@@ -31,9 +32,25 @@ class FirstViewController: UIViewController {
     //UITableViewDelete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
-            //taskMgr.tasks.removeAtIndex(indexPath.row)
+            courseMgr.courses.removeAtIndex(indexPath.row)
             tblCourses.reloadData()
         }
+    }
+    
+    //UITableViewDataSource
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return courseMgr.courses.count
+    }
+    
+    //The way the table and cells are displayed
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
+        
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+        
+        cell.textLabel?.text = courseMgr.courses[indexPath.row].name
+        cell.detailTextLabel?.text=courseMgr.courses[indexPath.row].grade
+        
+        return cell
     }
 
 }
