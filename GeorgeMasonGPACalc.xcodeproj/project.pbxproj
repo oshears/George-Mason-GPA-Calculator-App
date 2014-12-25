@@ -14,6 +14,7 @@
 		80DBDF5C1A4C763300601CE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF5B1A4C763300601CE9 /* Images.xcassets */; };
 		80DBDF5F1A4C763300601CE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */; };
 		80DBDF6B1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */; };
+		80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF741A4C785600601CE9 /* ThirdViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		80DBDF641A4C763300601CE9 /* GeorgeMasonGPACalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeorgeMasonGPACalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBDF691A4C763300601CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeorgeMasonGPACalcTests.swift; sourceTree = "<group>"; };
+		80DBDF741A4C785600601CE9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				80DBDF521A4C763300601CE9 /* AppDelegate.swift */,
 				80DBDF541A4C763300601CE9 /* FirstViewController.swift */,
 				80DBDF561A4C763300601CE9 /* SecondViewController.swift */,
+				80DBDF741A4C785600601CE9 /* ThirdViewController.swift */,
 				80DBDF581A4C763300601CE9 /* Main.storyboard */,
 				80DBDF5B1A4C763300601CE9 /* Images.xcassets */,
 				80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */,
 				80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */,
+				80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */,
 				80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

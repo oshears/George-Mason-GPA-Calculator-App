@@ -10,6 +10,15 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    @IBOutlet weak var totalCredits: UILabel!
+    @IBOutlet weak var totalPoints: UILabel!
+    @IBOutlet weak var gpa: UILabel!
+    @IBOutlet weak var totalCreditHours: UITextField!
+    @IBOutlet weak var totalQualityPoints: UITextField!
+    @IBOutlet weak var cumGpa: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
