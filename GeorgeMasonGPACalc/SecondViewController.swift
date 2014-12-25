@@ -23,17 +23,20 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+    }
+    override func viewDidAppear(animated: Bool) {
+        
+        super.viewDidAppear(true)
+        
         var sumCredits = 0 as Float
         var sumPoints = 0 as Float
         for course in courseMgr.courses{
             sumCredits += (course.credits as NSString).floatValue
-            sumPoints += (course.credits as NSString).floatValue * (course.qualPtVal as NSString).floatValue
+            sumPoints += (course.qualPts as NSString).floatValue
         }
         totalCredits.text="\(sumCredits)"
-        
-        
-        
-        
+        totalPoints.text="\(sumPoints)"
+        gpa.text=NSString(format:"%.02f",(sumPoints/sumCredits))
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +46,24 @@ class SecondViewController: UIViewController {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
+    }
+    
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
+        textField.resignFirstResponder();
+        return true
+    }
+    @IBAction func calcCumGPA_Clicked(sender: AnyObject) {
+        
+        var allCreds = 0 as Float
+        allCreds=(totalCredits.text! as NSString).floatValue+(self.totalCreditHours.text! as NSString).floatValue
+        var allPoints = 0 as Float
+        allPoints=(totalPoints.text! as NSString).floatValue + (self.totalQualityPoints.text! as NSString).floatValue
+        
+        var cummulativeGpa = allPoints/allCreds as Float
+        
+        cumGpa.text=NSString(format:"%.02f",(cummulativeGpa))
+        
+        
     }
 
 

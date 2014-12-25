@@ -72,8 +72,9 @@ class ThirdViewController: UIViewController {
             
             courseName.text=""
             selectedItemIndex=0
-            qualityPointValue.text="4"
+            qualityPointValue.text="4.0"
             courseCredit.text=""
+            gradePicker.selectRow(0, inComponent: 0, animated: true)
 
             self.tabBarController?.selectedIndex=0
         }
