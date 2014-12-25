@@ -22,11 +22,27 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var sumCredits = 0 as Float
+        var sumPoints = 0 as Float
+        for course in courseMgr.courses{
+            sumCredits += (course.credits as NSString).floatValue
+            sumPoints += (course.credits as NSString).floatValue * (course.qualPtVal as NSString).floatValue
+        }
+        totalCredits.text="\(sumCredits)"
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 
 

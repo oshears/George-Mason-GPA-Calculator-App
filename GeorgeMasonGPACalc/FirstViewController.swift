@@ -48,7 +48,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
         
         cell.textLabel?.text = courseMgr.courses[indexPath.row].name
-        cell.detailTextLabel?.text=courseMgr.courses[indexPath.row].grade
+        
+        var detailString = "Grade: " + courseMgr.courses[indexPath.row].grade + "\t Credits: " + courseMgr.courses[indexPath.row].credits + "\t Quality Points: " + courseMgr.courses[indexPath.row].qualPts
+            
+        cell.detailTextLabel?.text = detailString
         
         return cell
     }
