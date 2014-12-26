@@ -417,6 +417,7 @@
 				80DBDF701A4C763300601CE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		80DBDF711A4C763300601CE9 /* Build configuration list for PBXNativeTarget "GeorgeMasonGPACalcTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +426,7 @@
 				80DBDF731A4C763300601CE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
