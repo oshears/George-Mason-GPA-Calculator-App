@@ -132,6 +132,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zay-RX-QIv">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                                <color key="backgroundColor" red="0.10900846459999999" green="0.60377209600000004" blue="0.30421889060000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="WIr-PJ-gw2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-7s-4r2">
+                                <rect key="frame" x="112" y="28" width="96" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Course Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p7P-VA-Qpy">
                                 <rect key="frame" x="194" y="90" width="110" height="30"/>
                                 <constraints>
@@ -194,29 +207,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDK-6l-hUL">
-                                <rect key="frame" x="119" y="412" width="82" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDK-6l-hUL">
+                                <rect key="frame" x="274" y="24" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="ay9-bi-GHI"/>
+                                    <constraint firstAttribute="height" constant="30" id="ay9-bi-GHI"/>
                                 </constraints>
-                                <state key="normal" title="Add Course"/>
+                                <state key="normal" image="check-alt"/>
                                 <connections>
                                     <action selector="addCourseBtn_Click:" destination="nem-D7-NJj" eventType="touchUpInside" id="SLt-Mc-gnl"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zay-RX-QIv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
-                                <color key="backgroundColor" red="0.10900846459999999" green="0.60377209600000004" blue="0.30421889060000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="WIr-PJ-gw2"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iy1-7s-4r2">
-                                <rect key="frame" x="112" y="28" width="96" height="20.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -227,13 +227,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zay-RX-QIv" secondAttribute="trailing" constant="-16" id="CbC-IP-wg6"/>
                             <constraint firstItem="tjW-tR-Gdk" firstAttribute="leading" secondItem="gIv-wC-3bs" secondAttribute="leading" id="CcO-RB-5aA"/>
                             <constraint firstItem="p7P-VA-Qpy" firstAttribute="leading" secondItem="tjW-tR-Gdk" secondAttribute="trailing" constant="67" id="CgQ-Ug-W9H"/>
+                            <constraint firstItem="LDK-6l-hUL" firstAttribute="trailing" secondItem="G20-VM-vwQ" secondAttribute="trailingMargin" id="Ej1-mC-MGX"/>
                             <constraint firstItem="9S9-Gi-4QL" firstAttribute="top" secondItem="y5a-er-QP9" secondAttribute="bottom" constant="9" id="KHI-XE-G30"/>
                             <constraint firstItem="p7P-VA-Qpy" firstAttribute="trailing" secondItem="G20-VM-vwQ" secondAttribute="trailingMargin" id="MLt-I5-r1o"/>
                             <constraint firstItem="zay-RX-QIv" firstAttribute="top" secondItem="G20-VM-vwQ" secondAttribute="topMargin" id="QrA-fb-HWu"/>
                             <constraint firstItem="gIv-wC-3bs" firstAttribute="top" secondItem="tjW-tR-Gdk" secondAttribute="bottom" constant="23" id="R3q-OY-VnR"/>
                             <constraint firstItem="p7P-VA-Qpy" firstAttribute="top" secondItem="tjW-tR-Gdk" secondAttribute="top" id="SkP-Tq-dge"/>
-                            <constraint firstAttribute="centerX" secondItem="LDK-6l-hUL" secondAttribute="centerX" id="T23-Cq-1KG"/>
                             <constraint firstItem="Iy1-7s-4r2" firstAttribute="top" secondItem="z8n-2K-qwi" secondAttribute="bottom" constant="8" id="T9Q-Zg-pzv"/>
+                            <constraint firstItem="LDK-6l-hUL" firstAttribute="top" secondItem="z8n-2K-qwi" secondAttribute="bottom" constant="4" id="a1r-H6-kQE"/>
                             <constraint firstItem="y5a-er-QP9" firstAttribute="leading" secondItem="gIv-wC-3bs" secondAttribute="leading" id="aVK-bw-wlN"/>
                             <constraint firstAttribute="centerX" secondItem="Iy1-7s-4r2" secondAttribute="centerX" id="ctj-BS-RiZ"/>
                             <constraint firstItem="y5a-er-QP9" firstAttribute="leading" secondItem="G20-VM-vwQ" secondAttribute="leadingMargin" id="d8F-NO-8DG"/>
@@ -244,7 +245,6 @@
                             <constraint firstItem="VkG-Y3-2LR" firstAttribute="top" secondItem="ZCd-wf-TZk" secondAttribute="bottom" constant="8" symbolic="YES" id="nQM-2f-BK6"/>
                             <constraint firstItem="zay-RX-QIv" firstAttribute="leading" secondItem="G20-VM-vwQ" secondAttribute="leadingMargin" constant="-16" id="pV8-pZ-DPG"/>
                             <constraint firstItem="QeE-k7-mbg" firstAttribute="leading" secondItem="G20-VM-vwQ" secondAttribute="leading" id="rCn-d5-elV"/>
-                            <constraint firstItem="LDK-6l-hUL" firstAttribute="top" secondItem="9S9-Gi-4QL" secondAttribute="bottom" constant="56" id="x7f-qY-doq"/>
                             <constraint firstItem="ZCd-wf-TZk" firstAttribute="firstBaseline" secondItem="y5a-er-QP9" secondAttribute="firstBaseline" id="ySu-fp-10l"/>
                         </constraints>
                     </view>
@@ -452,7 +452,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Course" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2B-sl-jMu">
-                                <rect key="frame" x="112" y="28" width="96" height="20.5"/>
+                                <rect key="frame" x="112" y="28" width="95.5" height="20.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -519,12 +519,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-xN-bmi">
-                                <rect key="frame" x="116" y="412" width="88" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ug8-xN-bmi">
+                                <rect key="frame" x="274" y="20" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="MCW-9u-SqU"/>
+                                    <constraint firstAttribute="height" constant="30" id="MCW-9u-SqU"/>
                                 </constraints>
-                                <state key="normal" title="Done Editing"/>
+                                <state key="normal" image="check-alt"/>
                                 <connections>
                                     <action selector="doneEditingBtn_Click:" destination="Qvx-n8-z41" eventType="touchUpInside" id="ecG-gt-dOL"/>
                                 </connections>
@@ -547,17 +547,17 @@
                             <constraint firstItem="Rm8-Uf-7x6" firstAttribute="top" secondItem="zFL-C1-oh9" secondAttribute="bottom" constant="23" id="QZM-cD-uwm"/>
                             <constraint firstItem="eeA-O5-X06" firstAttribute="firstBaseline" secondItem="ufK-iB-mJj" secondAttribute="firstBaseline" constant="-52" id="TZb-ot-oev"/>
                             <constraint firstItem="zQH-la-ZGv" firstAttribute="top" secondItem="ufK-iB-mJj" secondAttribute="bottom" constant="9" id="Tqj-Hl-QT7"/>
-                            <constraint firstAttribute="centerX" secondItem="Ug8-xN-bmi" secondAttribute="centerX" id="Tr9-sa-BIo"/>
                             <constraint firstItem="zQH-la-ZGv" firstAttribute="leading" secondItem="Plx-Ub-Nfh" secondAttribute="leadingMargin" constant="1" id="WC3-4S-C9t"/>
                             <constraint firstItem="AMc-X0-DQU" firstAttribute="top" secondItem="Rm8-Uf-7x6" secondAttribute="top" id="YKx-Pw-Wgi"/>
                             <constraint firstItem="D2B-sl-jMu" firstAttribute="top" secondItem="nxf-w8-Bvt" secondAttribute="bottom" constant="8" id="Yfo-g3-FOd"/>
+                            <constraint firstItem="Ug8-xN-bmi" firstAttribute="top" secondItem="nxf-w8-Bvt" secondAttribute="bottom" id="cye-Yi-zbe"/>
                             <constraint firstItem="z3I-KX-wvY" firstAttribute="top" secondItem="Plx-Ub-Nfh" secondAttribute="topMargin" id="nMy-sS-xLl"/>
                             <constraint firstItem="AMc-X0-DQU" firstAttribute="top" secondItem="hU4-Jc-Pm9" secondAttribute="bottom" constant="14" id="pVD-KH-Td4"/>
                             <constraint firstItem="ufK-iB-mJj" firstAttribute="baseline" secondItem="eeA-O5-X06" secondAttribute="baseline" constant="52" id="qCn-V9-Hip"/>
                             <constraint firstItem="hU4-Jc-Pm9" firstAttribute="leading" secondItem="zFL-C1-oh9" secondAttribute="trailing" constant="67" id="sSm-iL-kp4"/>
                             <constraint firstItem="ufK-iB-mJj" firstAttribute="leading" secondItem="Plx-Ub-Nfh" secondAttribute="leadingMargin" id="sat-j3-f9T"/>
                             <constraint firstItem="zFL-C1-oh9" firstAttribute="top" secondItem="nxf-w8-Bvt" secondAttribute="bottom" constant="70" id="tyy-t2-ztu"/>
-                            <constraint firstItem="Ug8-xN-bmi" firstAttribute="top" secondItem="zQH-la-ZGv" secondAttribute="bottom" constant="56" id="zbQ-O4-Sr6"/>
+                            <constraint firstItem="Ug8-xN-bmi" firstAttribute="trailing" secondItem="Plx-Ub-Nfh" secondAttribute="trailingMargin" id="yVO-2t-YVt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add Course" image="first" id="Z43-wO-joX"/>
@@ -576,6 +576,7 @@
     <resources>
         <image name="add" width="30" height="30"/>
         <image name="books" width="30" height="30"/>
+        <image name="check-alt" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
         <image name="result" width="30" height="30"/>
     </resources>
