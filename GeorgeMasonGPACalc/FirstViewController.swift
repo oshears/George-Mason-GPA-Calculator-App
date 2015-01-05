@@ -13,7 +13,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Table on the first view
     @IBOutlet weak var tblCourses: UITableView!
     
-    @IBOutlet weak var navigationBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()

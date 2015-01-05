@@ -37,6 +37,9 @@ class SecondViewController: UIViewController {
         totalCredits.text="\(sumCredits)"
         totalPoints.text="\(sumPoints)"
         gpa.text=NSString(format:"%.02f",(sumPoints/sumCredits))
+        if gpa.text == "nan"{
+            gpa.text = "0.00"
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +65,9 @@ class SecondViewController: UIViewController {
         var cummulativeGpa = allPoints/allCreds as Float
         
         cumGpa.text=NSString(format:"%.02f",(cummulativeGpa))
+        if cumGpa.text == "nan"{
+            cumGpa.text = "0.00"
+        }
         
         
     }
