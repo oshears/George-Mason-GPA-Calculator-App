@@ -21,6 +21,7 @@ struct course{
 class CourseManager: NSObject {
     
     var courses = [course]()
+    var selected = -1
     
     func addCourse(name: String, grade: String,qpv: String,creds: String,qpts: String){
         

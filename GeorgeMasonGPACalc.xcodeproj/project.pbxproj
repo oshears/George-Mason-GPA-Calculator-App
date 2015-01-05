@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */; };
+		80CD8F141A57B406003EC40A /* CustomCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD8F131A57B406003EC40A /* CustomCourseCell.swift */; };
 		80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF521A4C763300601CE9 /* AppDelegate.swift */; };
 		80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF541A4C763300601CE9 /* FirstViewController.swift */; };
 		80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF561A4C763300601CE9 /* SecondViewController.swift */; };
@@ -16,6 +18,7 @@
 		80DBDF6B1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */; };
 		80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF741A4C785600601CE9 /* ThirdViewController.swift */; };
 		80DBDF7B1A4C884800601CE9 /* CouseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF7A1A4C884800601CE9 /* CouseManager.swift */; };
+		80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E209161A59F1340029582C /* EditCourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		80CD8F131A57B406003EC40A /* CustomCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCourseCell.swift; sourceTree = "<group>"; };
 		80DBDF4D1A4C763300601CE9 /* GeorgeMasonGPACalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeorgeMasonGPACalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBDF511A4C763300601CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DBDF521A4C763300601CE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeorgeMasonGPACalcTests.swift; sourceTree = "<group>"; };
 		80DBDF741A4C785600601CE9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		80DBDF7A1A4C884800601CE9 /* CouseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouseManager.swift; sourceTree = "<group>"; };
+		80E209161A59F1340029582C /* EditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +93,14 @@
 				80DBDF541A4C763300601CE9 /* FirstViewController.swift */,
 				80DBDF561A4C763300601CE9 /* SecondViewController.swift */,
 				80DBDF741A4C785600601CE9 /* ThirdViewController.swift */,
+				80E209161A59F1340029582C /* EditCourseViewController.swift */,
 				80DBDF581A4C763300601CE9 /* Main.storyboard */,
 				80DBDF5B1A4C763300601CE9 /* Images.xcassets */,
 				80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */,
 				80DBDF501A4C763300601CE9 /* Supporting Files */,
 				80DBDF7A1A4C884800601CE9 /* CouseManager.swift */,
+				80CD8F131A57B406003EC40A /* CustomCourseCell.swift */,
+				8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */,
 			);
 			path = GeorgeMasonGPACalc;
 			sourceTree = "<group>";
@@ -224,6 +233,9 @@
 				80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */,
 				80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */,
 				80DBDF7B1A4C884800601CE9 /* CouseManager.swift in Sources */,
+				80CD8F141A57B406003EC40A /* CustomCourseCell.swift in Sources */,
+				8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */,
+				80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */,
 				80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */,
 				80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */,
 			);

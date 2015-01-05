@@ -13,6 +13,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Table on the first view
     @IBOutlet weak var tblCourses: UITableView!
     
+    @IBOutlet weak var navigationBar: UINavigationBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,15 +46,27 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //The way the table and cells are displayed
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "test")
+        let cellIdentifier = "Cell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomCourseCell
         
-        cell.textLabel?.text = courseMgr.courses[indexPath.row].name
+        //cell.textLabel?.text = courseMgr.courses[indexPath.row].name
         
-        var detailString = "Grade: " + courseMgr.courses[indexPath.row].grade + "\t Credits: " + courseMgr.courses[indexPath.row].credits + "\t Quality Points: " + courseMgr.courses[indexPath.row].qualPts
+        //var detailString = "Grade: " + courseMgr.courses[indexPath.row].grade + "\t Credits: " + courseMgr.courses[indexPath.row].credits + "\t Quality Points: " + courseMgr.courses[indexPath.row].qualPts
             
-        cell.detailTextLabel?.text = detailString
+        //cell.detailTextLabel?.text = detailString
+        
+        cell.courseName.text = courseMgr.courses[indexPath.row].name
+        cell.courseCredits.text = "Credits: " + courseMgr.courses[indexPath.row].credits
+        cell.courseGrade.text = "Grade: " + courseMgr.courses[indexPath.row].grade
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        courseMgr.selected=indexPath.row
+        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("EditCourse")
+        self.showViewController(vc as UIViewController, sender: vc)
+
     }
 
 }
