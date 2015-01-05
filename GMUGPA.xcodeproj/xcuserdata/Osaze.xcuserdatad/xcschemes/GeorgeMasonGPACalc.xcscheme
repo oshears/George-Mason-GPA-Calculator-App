@@ -17,7 +17,7 @@
                BlueprintIdentifier = "80DBDF4C1A4C763300601CE9"
                BuildableName = "GeorgeMasonGPACalc.app"
                BlueprintName = "GeorgeMasonGPACalc"
-               ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+               ReferencedContainer = "container:GMUGPA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "80DBDF631A4C763300601CE9"
                BuildableName = "GeorgeMasonGPACalcTests.xctest"
                BlueprintName = "GeorgeMasonGPACalcTests"
-               ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+               ReferencedContainer = "container:GMUGPA.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "80DBDF631A4C763300601CE9"
                BuildableName = "GeorgeMasonGPACalcTests.xctest"
                BlueprintName = "GeorgeMasonGPACalcTests"
-               ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+               ReferencedContainer = "container:GMUGPA.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "80DBDF4C1A4C763300601CE9"
             BuildableName = "GeorgeMasonGPACalc.app"
             BlueprintName = "GeorgeMasonGPACalc"
-            ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+            ReferencedContainer = "container:GMUGPA.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "80DBDF4C1A4C763300601CE9"
             BuildableName = "GeorgeMasonGPACalc.app"
             BlueprintName = "GeorgeMasonGPACalc"
-            ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+            ReferencedContainer = "container:GMUGPA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "80DBDF4C1A4C763300601CE9"
             BuildableName = "GeorgeMasonGPACalc.app"
             BlueprintName = "GeorgeMasonGPACalc"
-            ReferencedContainer = "container:GeorgeMasonGPACalc.xcodeproj">
+            ReferencedContainer = "container:GMUGPA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
