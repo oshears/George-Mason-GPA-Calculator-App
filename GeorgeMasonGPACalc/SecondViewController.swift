@@ -55,6 +55,7 @@ class SecondViewController: UIViewController {
         textField.resignFirstResponder();
         return true
     }
+    
     @IBAction func calcCumGPA_Clicked(sender: AnyObject) {
         
         var allCreds = 0 as Float
@@ -70,6 +71,12 @@ class SecondViewController: UIViewController {
         }
         
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        print("Enter Pressed")
+        textField.endEditing(true)
+        return true
     }
 
 

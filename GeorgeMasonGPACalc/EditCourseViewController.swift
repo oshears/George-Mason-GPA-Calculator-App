@@ -113,9 +113,19 @@ class EditCourseViewController: UIViewController {
             courseCredits.text=""
             
             //self.tabBarController?.selectedIndex=0
+            //self.popViewControllerAnimated(true)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            /*
             let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
             self.showViewController(vc as UIViewController, sender: vc)
+            */
         }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        print("Enter Pressed")
+        textField.endEditing(true)
+        return true
     }
     
 

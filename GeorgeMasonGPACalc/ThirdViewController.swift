@@ -80,8 +80,9 @@ class ThirdViewController: UIViewController {
         }
     }
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
-        textField.resignFirstResponder();
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        print("Enter Pressed")
+        textField.endEditing(true)
         return true
     }
 
