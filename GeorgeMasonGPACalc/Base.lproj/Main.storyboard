@@ -97,6 +97,15 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="uiK-3s-28F"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6L-Xn-a6y">
+                                <rect key="frame" x="274" y="25" width="30" height="30"/>
+                                <state key="normal" image="gmugpaQuestion">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="helpBtn_Click:" destination="9pv-A4-QxB" eventType="touchUpInside" id="BXK-De-25X"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -105,6 +114,8 @@
                             <constraint firstItem="2EK-KE-VNS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="5NZ-P4-nRx"/>
                             <constraint firstItem="k53-sE-nmd" firstAttribute="top" secondItem="2EK-KE-VNS" secondAttribute="bottom" id="Mr8-N1-oHm"/>
                             <constraint firstItem="k53-sE-nmd" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-16" id="Nmj-zb-bca"/>
+                            <constraint firstItem="R6L-Xn-a6y" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailingMargin" id="RiZ-2Z-BVe"/>
+                            <constraint firstItem="R6L-Xn-a6y" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="5" id="RmA-kb-l3V"/>
                             <constraint firstAttribute="centerX" secondItem="FeD-P1-7f4" secondAttribute="centerX" id="UQc-15-TKd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2EK-KE-VNS" secondAttribute="trailing" constant="-16" id="UsC-i6-ys6"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="k53-sE-nmd" secondAttribute="bottom" id="ZjU-eE-IBE"/>
@@ -185,7 +196,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <outlet property="delegate" destination="nem-D7-NJj" id="Xda-D3-WEj"/>
+                                    <outlet property="delegate" destination="nem-D7-NJj" id="rXt-Xr-vGG"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tjW-tR-Gdk">
@@ -427,6 +438,38 @@
             </objects>
             <point key="canvasLocation" x="-61" y="127"/>
         </scene>
+        <!--Temp Tutorial View-->
+        <scene sceneID="8VJ-Pl-KD6">
+            <objects>
+                <viewController storyboardIdentifier="TempTutorial" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jWx-Rv-JJt" customClass="TempTutorialView" customModule="GeorgeMasonGPACalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qi9-vw-852"/>
+                        <viewControllerLayoutGuide type="bottom" id="qJ2-KP-lpL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="00s-IM-bjx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IbF-rL-TI7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qJ2-KP-lpL" firstAttribute="top" secondItem="IbF-rL-TI7" secondAttribute="bottom" id="9Yd-70-XxN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IbF-rL-TI7" secondAttribute="trailing" constant="-16" id="O0b-uU-pEk"/>
+                            <constraint firstItem="IbF-rL-TI7" firstAttribute="leading" secondItem="00s-IM-bjx" secondAttribute="leadingMargin" constant="-16" id="cKq-Z5-c3i"/>
+                            <constraint firstItem="IbF-rL-TI7" firstAttribute="top" secondItem="00s-IM-bjx" secondAttribute="topMargin" id="jR9-Lj-Hl0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tutImages" destination="IbF-rL-TI7" id="Uxs-lT-oxq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uti-dH-9rT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="291" y="-758"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -591,7 +634,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TF7-ny-XMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="425" y="-527"/>
+            <point key="canvasLocation" x="291" y="-133"/>
         </scene>
     </scenes>
     <resources>
@@ -599,6 +642,7 @@
         <image name="books" width="30" height="30"/>
         <image name="check-alt" width="30" height="30"/>
         <image name="first" width="30" height="30"/>
+        <image name="gmugpaQuestion" width="30" height="30"/>
         <image name="result" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

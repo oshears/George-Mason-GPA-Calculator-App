@@ -22,6 +22,10 @@ class ThirdViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+       // NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
+
 
         // Do any additional setup after loading the view.
     }
@@ -81,10 +85,26 @@ class ThirdViewController: UIViewController {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
-        print("Enter Pressed")
         textField.endEditing(true)
         return true
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField){
+        if textField==courseCredit{
+            self.view.frame.origin.y -= 150
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField==courseCredit{
+            self.view.frame.origin.y += 150
+        }
+        
+    }
+
+    
+    
 
     /*
     // MARK: - Navigation

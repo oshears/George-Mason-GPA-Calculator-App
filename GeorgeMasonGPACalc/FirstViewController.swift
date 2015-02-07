@@ -67,6 +67,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.showViewController(vc as UIViewController, sender: vc)
 
     }
+    @IBAction func helpBtn_Click(sender: UIButton) {
+        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TempTutorial")
+        self.showViewController(vc as UIViewController, sender: vc)
+    }
 
 }
 
