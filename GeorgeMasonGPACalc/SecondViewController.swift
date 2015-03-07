@@ -78,6 +78,20 @@ class SecondViewController: UIViewController {
         textField.endEditing(true)
         return true
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField){
+        if textField==self.totalCreditHours || textField==self.totalQualityPoints{
+            self.view.frame.origin.y -= 150
+        }
+        
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField==self.totalCreditHours || textField==self.totalQualityPoints{
+            self.view.frame.origin.y += 150
+        }
+        
+    }
 
 
 }

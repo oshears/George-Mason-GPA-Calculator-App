@@ -16,6 +16,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tblCourses.tableFooterView = UIView(frame:CGRectZero)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
