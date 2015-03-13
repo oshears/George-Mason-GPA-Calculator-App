@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800B9A031AB22F33007156FF /* GMUGPA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */; };
+		800B9A051AB22FD4007156FF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B9A041AB22FD4007156FF /* Course.swift */; };
 		8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */; };
 		80AB1CA51A79AD0D007377C1 /* CustomPageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */; };
 		80AB1CA71A79C111007377C1 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA61A79C111007377C1 /* PageContentViewController.swift */; };
@@ -21,7 +23,6 @@
 		80DBDF5F1A4C763300601CE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */; };
 		80DBDF6B1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */; };
 		80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF741A4C785600601CE9 /* ThirdViewController.swift */; };
-		80DBDF7B1A4C884800601CE9 /* CouseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF7A1A4C884800601CE9 /* CouseManager.swift */; };
 		80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E209161A59F1340029582C /* EditCourseViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		800B9A021AB22F33007156FF /* GMUGPA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GMUGPA.xcdatamodel; sourceTree = "<group>"; };
+		800B9A041AB22FD4007156FF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageViewViewController.swift; sourceTree = "<group>"; };
 		80AB1CA61A79C111007377C1 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +57,6 @@
 		80DBDF691A4C763300601CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeorgeMasonGPACalcTests.swift; sourceTree = "<group>"; };
 		80DBDF741A4C785600601CE9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		80DBDF7A1A4C884800601CE9 /* CouseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouseManager.swift; sourceTree = "<group>"; };
 		80E209161A59F1340029582C /* EditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,20 +101,21 @@
 			children = (
 				80DBDF521A4C763300601CE9 /* AppDelegate.swift */,
 				80DBDF541A4C763300601CE9 /* FirstViewController.swift */,
+				80E209161A59F1340029582C /* EditCourseViewController.swift */,
 				80DBDF561A4C763300601CE9 /* SecondViewController.swift */,
 				80DBDF741A4C785600601CE9 /* ThirdViewController.swift */,
-				80E209161A59F1340029582C /* EditCourseViewController.swift */,
 				80AB1CA81A79C4C6007377C1 /* TempTutorialView.swift */,
 				80DBDF581A4C763300601CE9 /* Main.storyboard */,
 				80DBDF5B1A4C763300601CE9 /* Images.xcassets */,
 				80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */,
 				80DBDF501A4C763300601CE9 /* Supporting Files */,
-				80DBDF7A1A4C884800601CE9 /* CouseManager.swift */,
+				800B9A041AB22FD4007156FF /* Course.swift */,
 				80CD8F131A57B406003EC40A /* CustomCourseCell.swift */,
 				8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */,
 				80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */,
 				80AB1CA61A79C111007377C1 /* PageContentViewController.swift */,
 				80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */,
+				800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */,
 			);
 			path = GeorgeMasonGPACalc;
 			sourceTree = "<group>";
@@ -245,16 +248,17 @@
 			files = (
 				80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */,
 				80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */,
-				80DBDF7B1A4C884800601CE9 /* CouseManager.swift in Sources */,
 				80AB1CA91A79C4C6007377C1 /* TempTutorialView.swift in Sources */,
 				80CD8F141A57B406003EC40A /* CustomCourseCell.swift in Sources */,
 				8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */,
 				80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */,
 				80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */,
+				800B9A051AB22FD4007156FF /* Course.swift in Sources */,
 				80AB1CA71A79C111007377C1 /* PageContentViewController.swift in Sources */,
 				80AB1CA51A79AD0D007377C1 /* CustomPageViewViewController.swift in Sources */,
 				80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */,
 				80AB1CAB1A79CA4C007377C1 /* CustomTextBox.swift in Sources */,
+				800B9A031AB22F33007156FF /* GMUGPA.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +468,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				800B9A021AB22F33007156FF /* GMUGPA.xcdatamodel */,
+			);
+			currentVersion = 800B9A021AB22F33007156FF /* GMUGPA.xcdatamodel */;
+			path = GMUGPA.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 80DBDF451A4C763300601CE9 /* Project object */;
 }

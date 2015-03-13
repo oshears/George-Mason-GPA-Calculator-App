@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ThirdViewController: UIViewController {
 
@@ -70,17 +71,37 @@ class ThirdViewController: UIViewController {
             var qpValFloat = Float(numberGrades[selectedItemIndex])
             var result = credFloat * qpValFloat
             var eString="\(result)"
+                        
             
-            courseMgr.addCourse(aString, grade: bString, qpv: cString, creds: dString, qpts: eString)
-            self.view.endEditing(true)
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+                
+                var course = NSEntityDescription.insertNewObjectForEntityForName("Course",
+                inManagedObjectContext: managedObjectContext) as Course
+                course.title = aString
+                course.grade = bString
+                course.qualitypointvalue = cString
+                course.credits = dString
+                course.qualitypoints = eString
+                
+                var e: NSError?
+                if managedObjectContext.save(&e) != true {
+                    println("insert error: \(e!.localizedDescription)")
+                    return
+                }
+            }
             
-            courseName.text=""
-            selectedItemIndex=0
-            qualityPointValue.text="4.0"
-            courseCredit.text=""
-            gradePicker.selectRow(0, inComponent: 0, animated: true)
 
+            self.view.endEditing(true)
+                
+            courseName.text = ""
+            selectedItemIndex = 0
+            qualityPointValue.text = "4.0"
+            courseCredit.text = ""
+            gradePicker.selectRow(0, inComponent: 0, animated: true)
+                
+                
             self.tabBarController?.selectedIndex=0
+            
         }
     }
     

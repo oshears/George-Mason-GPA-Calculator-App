@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class EditCourseViewController: UIViewController {
+class EditCourseViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var courseName: UITextField!
     
@@ -20,13 +21,14 @@ class EditCourseViewController: UIViewController {
     var letterGrades = ["A+/A","A-","B+","B","B-","C+","C","C-","D","F"]
     var numberGrades = [4.00,3.67,3.33,3.00,2.67,2.33,2.00,1.67,1.00,0.00]
     var selectedItemIndex = 0
+    var course:Course!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-
-        // Do any additional setup after loading the view.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,22 +38,18 @@ class EditCourseViewController: UIViewController {
     
     
     override func viewDidAppear(animated: Bool) {
-        courseName.text = courseMgr.courses[courseMgr.selected].name
-        courseQualPtVal.text = courseMgr.courses[courseMgr.selected].qualPtVal
-        courseCredits.text = courseMgr.courses[courseMgr.selected].credits
+        if course != nil{
+            courseName.text = course.title
+            courseQualPtVal.text = course.qualitypointvalue
+            courseCredits.text = course.credits
         
-        var pickerSelectNum = courseMgr.courses[courseMgr.selected].grade
+            var pickerSelectNum = course.grade
         
-        //var theIndex = (find(letterGrades, pickerSelectNum)!)
-        //print(find(self.letterGrades, pickerSelectNum)!)
-        
-
-        if let index = find(self.letterGrades, pickerSelectNum){
-            //println("We got" + String(index))
-            //println("OOOOOk")
-            //self.courseGradePicker.selectedRowInComponent(index)
-            self.courseGradePicker.selectRow(index, inComponent: 0, animated: false)
-            selectedItemIndex = index
+            
+            if let index = find(self.letterGrades, pickerSelectNum){
+                self.courseGradePicker.selectRow(index, inComponent: 0, animated: false)
+                selectedItemIndex = index
+            }
         }
         
         
@@ -100,11 +98,11 @@ class EditCourseViewController: UIViewController {
             var result = credFloat * qpValFloat
             var eString="\(result)"
             
-            courseMgr.courses[courseMgr.selected].name=aString
-            courseMgr.courses[courseMgr.selected].grade=bString
-            courseMgr.courses[courseMgr.selected].qualPtVal=cString
-            courseMgr.courses[courseMgr.selected].credits=dString
-            courseMgr.courses[courseMgr.selected].qualPts=eString
+            course.title=aString
+            course.grade=bString
+            course.qualitypointvalue=cString
+            course.credits=dString
+            course.qualitypoints=eString
             
             
             self.view.endEditing(true)
@@ -113,19 +111,14 @@ class EditCourseViewController: UIViewController {
             selectedItemIndex=0
             courseQualPtVal.text=""
             courseCredits.text=""
+
             
-            //self.tabBarController?.selectedIndex=0
-            //self.popViewControllerAnimated(true)
             self.dismissViewControllerAnimated(true, completion: nil)
-            /*
-            let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TabController")
-            self.showViewController(vc as UIViewController, sender: vc)
-            */
+            
         }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
-        print("Enter Pressed")
         textField.endEditing(true)
         return true
     }

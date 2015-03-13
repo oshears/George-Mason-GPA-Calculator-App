@@ -7,17 +7,38 @@
 //
 
 import UIKit
+import CoreData
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     //Table on the first view
     @IBOutlet weak var tblCourses: UITableView!
     
+    var courses:[Course] = []
+    var newCoursePresent = false
+    
+    var fetchResultController:NSFetchedResultsController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tblCourses.tableFooterView = UIView(frame:CGRectZero)
         // Do any additional setup after loading the view, typically from a nib.
+        
+        var fetchRequest = NSFetchRequest(entityName: "Course")
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as
+            AppDelegate).managedObjectContext {
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            var e: NSError?
+            var result = fetchResultController.performFetch(&e)
+            courses = fetchResultController.fetchedObjects as [Course]
+            if result != true {
+            println(e?.localizedDescription)
+            } }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,20 +48,21 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Returning to view
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         tblCourses.reloadData();
     }
     
     //UITableViewDelete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if(editingStyle == UITableViewCellEditingStyle.Delete){
-            courseMgr.courses.removeAtIndex(indexPath.row)
+            courses.removeAtIndex(indexPath.row)
             tblCourses.reloadData()
         }
     }
     
     //UITableViewDataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return courseMgr.courses.count
+        return courses.count
     }
     
     //The way the table and cells are displayed
@@ -49,29 +71,54 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomCourseCell
         
-        //cell.textLabel?.text = courseMgr.courses[indexPath.row].name
-        
-        //var detailString = "Grade: " + courseMgr.courses[indexPath.row].grade + "\t Credits: " + courseMgr.courses[indexPath.row].credits + "\t Quality Points: " + courseMgr.courses[indexPath.row].qualPts
-            
-        //cell.detailTextLabel?.text = detailString
-        
-        cell.courseName.text = courseMgr.courses[indexPath.row].name
-        cell.courseCredits.text = "Credits: " + courseMgr.courses[indexPath.row].credits
-        cell.courseGrade.text = "Grade: " + courseMgr.courses[indexPath.row].grade
+        cell.courseName.text = courses[indexPath.row].title
+        cell.courseCredits.text = "Credits: " + courses[indexPath.row].credits
+        cell.courseGrade.text = "Grade: " + courses[indexPath.row].grade
         
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        courseMgr.selected=indexPath.row
-        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("EditCourse")
-        self.showViewController(vc as UIViewController, sender: vc)
-
-    }
     @IBAction func helpBtn_Click(sender: UIButton) {
         let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TempTutorial")
         self.showViewController(vc as UIViewController, sender: vc)
     }
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
+            self.tblCourses.beginUpdates()
+    }
+    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!,
+            atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType,
+            newIndexPath: NSIndexPath!) {
+            switch type {
+        case .Insert:
+            self.tblCourses.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+        case .Delete:
+            self.tblCourses.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        case .Update:
+            self.tblCourses.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        default:
+            self.tblCourses.reloadData()
+            }
+            courses = controller.fetchedObjects as [Course]
+    }
+    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+            self.tblCourses.endUpdates()
+    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier=="editCourse"{
+            if let row = tblCourses.indexPathForSelectedRow()?.row {
+                let destinationController:EditCourseViewController = segue.destinationViewController as EditCourseViewController
+            //let newDestinationController:EditCourseViewController
+                let course:Course = fetchResultController.objectAtIndexPath(tblCourses.indexPathForSelectedRow()!) as Course
+                destinationController.course = course
+                destinationController.selectedItemIndex = row
+            }
+        }
+    }
+    
+    @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {
+    }
+    
 
 }
 

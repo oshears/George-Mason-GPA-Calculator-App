@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreData
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var totalCredits: UILabel!
     @IBOutlet weak var totalPoints: UILabel!
@@ -17,7 +18,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var totalQualityPoints: UITextField!
     @IBOutlet weak var cumGpa: UILabel!
     
-    
+    var courses:[Course] = []
+    var fetchResultController:NSFetchedResultsController!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +31,28 @@ class SecondViewController: UIViewController {
         
         super.viewDidAppear(true)
         
+        
+        var fetchRequest = NSFetchRequest(entityName: "Course")
+        let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as
+            AppDelegate).managedObjectContext {
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            var e: NSError?
+            var result = fetchResultController.performFetch(&e)
+            courses = fetchResultController.fetchedObjects as [Course]
+            if result != true {
+            println(e?.localizedDescription)
+            } }
+
+        
         var sumCredits = 0 as Float
         var sumPoints = 0 as Float
-        for course in courseMgr.courses{
+        for course in courses{
             sumCredits += (course.credits as NSString).floatValue
-            sumPoints += (course.qualPts as NSString).floatValue
+            sumPoints += (course.qualitypoints as NSString).floatValue
         }
         totalCredits.text="\(sumCredits)"
         totalPoints.text="\(sumPoints)"
