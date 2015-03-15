@@ -1,15 +1,15 @@
 //
-//  SecondViewController.swift
-//  GeorgeMasonGPACalc
+//  ResultsTableViewController.swift
+//  GMUGPA
 //
-//  Created by Osaze Shears on 12/25/14.
-//  Copyright (c) 2014 Osaze Shears. All rights reserved.
+//  Created by Osaze Shears on 3/14/15.
+//  Copyright (c) 2015 Osaze Shears. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class ResultsTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     @IBOutlet weak var totalCredits: UILabel!
     @IBOutlet weak var totalPoints: UILabel!
@@ -20,11 +20,14 @@ class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate
     
     var courses:[Course] = []
     var fetchResultController:NSFetchedResultsController!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        totalCreditHours.returnKeyType = UIReturnKeyType.Done
+        totalQualityPoints.returnKeyType = UIReturnKeyType.Done
         
     }
     override func viewDidAppear(animated: Bool) {
@@ -37,16 +40,16 @@ class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate
         fetchRequest.sortDescriptors = [sortDescriptor]
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as
             AppDelegate).managedObjectContext {
-            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
-            managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-            fetchResultController.delegate = self
-            var e: NSError?
-            var result = fetchResultController.performFetch(&e)
-            courses = fetchResultController.fetchedObjects as [Course]
-            if result != true {
-            println(e?.localizedDescription)
-            } }
-
+                fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
+                    managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+                fetchResultController.delegate = self
+                var e: NSError?
+                var result = fetchResultController.performFetch(&e)
+                courses = fetchResultController.fetchedObjects as [Course]
+                if result != true {
+                    println(e?.localizedDescription)
+                } }
+        
         
         var sumCredits = 0 as Float
         var sumPoints = 0 as Float
@@ -61,7 +64,7 @@ class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate
             gpa.text = "0.00"
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,7 +115,11 @@ class SecondViewController: UIViewController, NSFetchedResultsControllerDelegate
         }
         
     }
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.row == 6){
+            calcCumGPA_Clicked(UIButton())
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
 }
-

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate {
 
     //Table on the first view
     @IBOutlet weak var tblCourses: UITableView!
@@ -36,9 +36,25 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             var result = fetchResultController.performFetch(&e)
             courses = fetchResultController.fetchedObjects as [Course]
             if result != true {
-            println(e?.localizedDescription)
-            } }
+                println(e?.localizedDescription)
+            }
+        }
         
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let hasViewedWalkthrough = defaults.boolForKey("hasViewedWalkthrough")
+        if !hasViewedWalkthrough{
+            if let helpPageViewController = storyboard?.instantiateViewControllerWithIdentifier("HelpPageViewController") as? HelpPageViewController {
+                self.presentViewController(helpPageViewController, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    @IBAction func displayHelp(sender:AnyObject){
+        if let helpPageViewController = storyboard?.instantiateViewControllerWithIdentifier("HelpPageViewController") as? HelpPageViewController {
+                self.presentViewController(helpPageViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,15 +65,44 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Returning to view
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+                
         tblCourses.reloadData();
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     //UITableViewDelete
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        if(editingStyle == UITableViewCellEditingStyle.Delete){
+        /*if(editingStyle == UITableViewCellEditingStyle.Delete){
             courses.removeAtIndex(indexPath.row)
             tblCourses.reloadData()
-        }
+        }*/
+    }
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        
+        var deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete",handler: {
+            (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            
+            // Delete the row from the data source
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+                
+                let courseToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as Course
+                managedObjectContext.deleteObject(courseToDelete)
+                
+                var e: NSError?
+                if managedObjectContext.save(&e) != true {
+                    println("delete error: \(e!.localizedDescription)")
+                }
+            }
+            
+        })
+        
+        deleteAction.backgroundColor = UIColor(red: 237.0/255.0, green: 75.0/255.0, blue: 27.0/255.0, alpha: 1.0)
+        
+        return [deleteAction]
     }
     
     //UITableViewDataSource
@@ -78,10 +123,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
-    @IBAction func helpBtn_Click(sender: UIButton) {
-        let vc : AnyObject! = self.storyboard?.instantiateViewControllerWithIdentifier("TempTutorial")
-        self.showViewController(vc as UIViewController, sender: vc)
-    }
     
     func controllerWillChangeContent(controller: NSFetchedResultsController!) {
             self.tblCourses.beginUpdates()
@@ -106,14 +147,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier=="editCourse"{
+            
             if let row = tblCourses.indexPathForSelectedRow()?.row {
-                let destinationController:EditCourseViewController = segue.destinationViewController as EditCourseViewController
-            //let newDestinationController:EditCourseViewController
-                let course:Course = fetchResultController.objectAtIndexPath(tblCourses.indexPathForSelectedRow()!) as Course
-                destinationController.course = course
-                destinationController.selectedItemIndex = row
+                //Get the destination navigation view controller
+                let destinationController = segue.destinationViewController as UINavigationController
+                //Get the view controller from the destination navigation controller
+                let newDestinationController = destinationController.viewControllers[0] as EditCourseTableViewController
+                let course:Course = courses[row]
+                newDestinationController.course = course
+                newDestinationController.selectedItemIndex = row
+            
+            
             }
+            
         }
+    }
+    @IBAction func addCourse(sender:AnyObject){
+        self.tabBarController?.selectedIndex = 2
     }
     
     @IBAction func unwindToHomeScreen(segue:UIStoryboardSegue) {

@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		800B9A031AB22F33007156FF /* GMUGPA.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */; };
 		800B9A051AB22FD4007156FF /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B9A041AB22FD4007156FF /* Course.swift */; };
-		8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */; };
-		80AB1CA51A79AD0D007377C1 /* CustomPageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */; };
-		80AB1CA71A79C111007377C1 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA61A79C111007377C1 /* PageContentViewController.swift */; };
-		80AB1CA91A79C4C6007377C1 /* TempTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA81A79C4C6007377C1 /* TempTutorialView.swift */; };
+		800B9A0B1AB2836D007156FF /* EditCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800B9A0A1AB2836D007156FF /* EditCourseTableViewController.swift */; };
+		80AB1CA91A79C4C6007377C1 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CA81A79C4C6007377C1 /* TutorialViewController.swift */; };
 		80AB1CAB1A79CA4C007377C1 /* CustomTextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */; };
 		80CD8F141A57B406003EC40A /* CustomCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CD8F131A57B406003EC40A /* CustomCourseCell.swift */; };
 		80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF521A4C763300601CE9 /* AppDelegate.swift */; };
-		80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF541A4C763300601CE9 /* FirstViewController.swift */; };
-		80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF561A4C763300601CE9 /* SecondViewController.swift */; };
+		80DBDF551A4C763300601CE9 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF541A4C763300601CE9 /* CourseViewController.swift */; };
 		80DBDF5A1A4C763300601CE9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF581A4C763300601CE9 /* Main.storyboard */; };
 		80DBDF5C1A4C763300601CE9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF5B1A4C763300601CE9 /* Images.xcassets */; };
 		80DBDF5F1A4C763300601CE9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */; };
 		80DBDF6B1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */; };
-		80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DBDF741A4C785600601CE9 /* ThirdViewController.swift */; };
-		80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E209161A59F1340029582C /* EditCourseViewController.swift */; };
+		80F6CAE91AB50333007FD3CC /* AddCourseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F6CAE81AB50333007FD3CC /* AddCourseTableViewController.swift */; };
+		80F6CAEB1AB50505007FD3CC /* ResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F6CAEA1AB50505007FD3CC /* ResultsTableViewController.swift */; };
+		80F6CAED1AB50C7A007FD3CC /* HelpPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F6CAEC1AB50C7A007FD3CC /* HelpPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,25 +37,23 @@
 /* Begin PBXFileReference section */
 		800B9A021AB22F33007156FF /* GMUGPA.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GMUGPA.xcdatamodel; sourceTree = "<group>"; };
 		800B9A041AB22FD4007156FF /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
-		8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
-		80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageViewViewController.swift; sourceTree = "<group>"; };
-		80AB1CA61A79C111007377C1 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
-		80AB1CA81A79C4C6007377C1 /* TempTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempTutorialView.swift; sourceTree = "<group>"; };
+		800B9A0A1AB2836D007156FF /* EditCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseTableViewController.swift; sourceTree = "<group>"; };
+		80AB1CA81A79C4C6007377C1 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextBox.swift; sourceTree = "<group>"; };
 		80CD8F131A57B406003EC40A /* CustomCourseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCourseCell.swift; sourceTree = "<group>"; };
 		80DBDF4D1A4C763300601CE9 /* GeorgeMasonGPACalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeorgeMasonGPACalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBDF511A4C763300601CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DBDF521A4C763300601CE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80DBDF541A4C763300601CE9 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		80DBDF561A4C763300601CE9 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		80DBDF541A4C763300601CE9 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		80DBDF591A4C763300601CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80DBDF5B1A4C763300601CE9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		80DBDF5E1A4C763300601CE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		80DBDF641A4C763300601CE9 /* GeorgeMasonGPACalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeorgeMasonGPACalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		80DBDF691A4C763300601CE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80DBDF6A1A4C763300601CE9 /* GeorgeMasonGPACalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeorgeMasonGPACalcTests.swift; sourceTree = "<group>"; };
-		80DBDF741A4C785600601CE9 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		80E209161A59F1340029582C /* EditCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCourseViewController.swift; sourceTree = "<group>"; };
+		80F6CAE81AB50333007FD3CC /* AddCourseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseTableViewController.swift; sourceTree = "<group>"; };
+		80F6CAEA1AB50505007FD3CC /* ResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableViewController.swift; sourceTree = "<group>"; };
+		80F6CAEC1AB50C7A007FD3CC /* HelpPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,20 +96,18 @@
 			isa = PBXGroup;
 			children = (
 				80DBDF521A4C763300601CE9 /* AppDelegate.swift */,
-				80DBDF541A4C763300601CE9 /* FirstViewController.swift */,
-				80E209161A59F1340029582C /* EditCourseViewController.swift */,
-				80DBDF561A4C763300601CE9 /* SecondViewController.swift */,
-				80DBDF741A4C785600601CE9 /* ThirdViewController.swift */,
-				80AB1CA81A79C4C6007377C1 /* TempTutorialView.swift */,
+				80DBDF541A4C763300601CE9 /* CourseViewController.swift */,
+				800B9A0A1AB2836D007156FF /* EditCourseTableViewController.swift */,
+				80F6CAEA1AB50505007FD3CC /* ResultsTableViewController.swift */,
+				80F6CAE81AB50333007FD3CC /* AddCourseTableViewController.swift */,
+				80F6CAEC1AB50C7A007FD3CC /* HelpPageViewController.swift */,
+				80AB1CA81A79C4C6007377C1 /* TutorialViewController.swift */,
 				80DBDF581A4C763300601CE9 /* Main.storyboard */,
 				80DBDF5B1A4C763300601CE9 /* Images.xcassets */,
 				80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */,
 				80DBDF501A4C763300601CE9 /* Supporting Files */,
 				800B9A041AB22FD4007156FF /* Course.swift */,
 				80CD8F131A57B406003EC40A /* CustomCourseCell.swift */,
-				8076DECB1A5A13E100F4714B /* CustomNavigationBar.swift */,
-				80AB1CA41A79AD0D007377C1 /* CustomPageViewViewController.swift */,
-				80AB1CA61A79C111007377C1 /* PageContentViewController.swift */,
 				80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */,
 				800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */,
 			);
@@ -246,19 +240,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80DBDF571A4C763300601CE9 /* SecondViewController.swift in Sources */,
+				80F6CAEB1AB50505007FD3CC /* ResultsTableViewController.swift in Sources */,
 				80DBDF531A4C763300601CE9 /* AppDelegate.swift in Sources */,
-				80AB1CA91A79C4C6007377C1 /* TempTutorialView.swift in Sources */,
+				80AB1CA91A79C4C6007377C1 /* TutorialViewController.swift in Sources */,
 				80CD8F141A57B406003EC40A /* CustomCourseCell.swift in Sources */,
-				8076DECC1A5A13E100F4714B /* CustomNavigationBar.swift in Sources */,
-				80E209171A59F1340029582C /* EditCourseViewController.swift in Sources */,
-				80DBDF751A4C785600601CE9 /* ThirdViewController.swift in Sources */,
+				800B9A0B1AB2836D007156FF /* EditCourseTableViewController.swift in Sources */,
 				800B9A051AB22FD4007156FF /* Course.swift in Sources */,
-				80AB1CA71A79C111007377C1 /* PageContentViewController.swift in Sources */,
-				80AB1CA51A79AD0D007377C1 /* CustomPageViewViewController.swift in Sources */,
-				80DBDF551A4C763300601CE9 /* FirstViewController.swift in Sources */,
+				80F6CAE91AB50333007FD3CC /* AddCourseTableViewController.swift in Sources */,
+				80DBDF551A4C763300601CE9 /* CourseViewController.swift in Sources */,
 				80AB1CAB1A79CA4C007377C1 /* CustomTextBox.swift in Sources */,
 				800B9A031AB22F33007156FF /* GMUGPA.xcdatamodeld in Sources */,
+				80F6CAED1AB50C7A007FD3CC /* HelpPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

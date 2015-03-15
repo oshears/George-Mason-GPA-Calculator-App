@@ -1,16 +1,17 @@
 //
-//  ThirdViewController.swift
-//  GeorgeMasonGPACalc
+//  AddCourseTableViewController.swift
+//  GMUGPA
 //
-//  Created by Osaze Shears on 12/25/14.
-//  Copyright (c) 2014 Osaze Shears. All rights reserved.
+//  Created by Osaze Shears on 3/14/15.
+//  Copyright (c) 2015 Osaze Shears. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class ThirdViewController: UIViewController {
+class AddCourseTableViewController: UITableViewController {
 
+    
     @IBOutlet weak var courseName: UITextField!
     @IBOutlet weak var gradePicker: UIPickerView!
     @IBOutlet weak var qualityPointValue: UILabel!
@@ -20,15 +21,17 @@ class ThirdViewController: UIViewController {
     var numberGrades = [4.00,3.67,3.33,3.00,2.67,2.33,2.00,1.67,1.00,0.00]
     var selectedItemIndex = 0
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
-       // NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
-
-
-        // Do any additional setup after loading the view.
+        courseName.returnKeyType = UIReturnKeyType.Done
+        courseCredit.returnKeyType = UIReturnKeyType.Done
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +55,7 @@ class ThirdViewController: UIViewController {
         qualityPointValue.text="\(numberGrades[row])"
     }
     
+    
     //When user touches out of edit box
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
@@ -71,12 +75,12 @@ class ThirdViewController: UIViewController {
             var qpValFloat = Float(numberGrades[selectedItemIndex])
             var result = credFloat * qpValFloat
             var eString="\(result)"
-                        
+            
             
             if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
                 
                 var course = NSEntityDescription.insertNewObjectForEntityForName("Course",
-                inManagedObjectContext: managedObjectContext) as Course
+                    inManagedObjectContext: managedObjectContext) as Course
                 course.title = aString
                 course.grade = bString
                 course.qualitypointvalue = cString
@@ -90,16 +94,16 @@ class ThirdViewController: UIViewController {
                 }
             }
             
-
+            
             self.view.endEditing(true)
-                
+            
             courseName.text = ""
             selectedItemIndex = 0
             qualityPointValue.text = "4.0"
             courseCredit.text = ""
             gradePicker.selectRow(0, inComponent: 0, animated: true)
-                
-                
+            
+            
             self.tabBarController?.selectedIndex=0
             
         }
@@ -124,21 +128,8 @@ class ThirdViewController: UIViewController {
         
     }
 
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
-    
-    
-    
-    
 
 }

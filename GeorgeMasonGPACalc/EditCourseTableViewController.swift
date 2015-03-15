@@ -1,15 +1,15 @@
 //
-//  EditCourseViewController.swift
-//  GeorgeMasonGPACalc
+//  EditCourseTableViewController.swift
+//  GMUGPA
 //
-//  Created by Osaze Shears on 1/4/15.
+//  Created by Osaze Shears on 3/12/15.
 //  Copyright (c) 2015 Osaze Shears. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class EditCourseViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class EditCourseTableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet weak var courseName: UITextField!
     
@@ -17,6 +17,8 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
     
     @IBOutlet weak var courseQualPtVal: UILabel!
     @IBOutlet weak var courseCredits: UITextField!
+    
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
     
     var letterGrades = ["A+/A","A-","B+","B","B-","C+","C","C-","D","F"]
     var numberGrades = [4.00,3.67,3.33,3.00,2.67,2.33,2.00,1.67,1.00,0.00]
@@ -27,10 +29,12 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
         super.viewDidLoad()
         
         
+        courseName.returnKeyType = UIReturnKeyType.Done
+        courseCredits.returnKeyType = UIReturnKeyType.Done
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,9 +46,9 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
             courseName.text = course.title
             courseQualPtVal.text = course.qualitypointvalue
             courseCredits.text = course.credits
-        
+            
             var pickerSelectNum = course.grade
-        
+            
             
             if let index = find(self.letterGrades, pickerSelectNum){
                 self.courseGradePicker.selectRow(index, inComponent: 0, animated: false)
@@ -54,17 +58,9 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
         
         
         
-        
     }
     
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView!) -> Int{
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
-        return letterGrades.count
-    }
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String!{
         return letterGrades[row]
     }
@@ -73,15 +69,20 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
         selectedItemIndex=row
         courseQualPtVal.text="\(numberGrades[row])"
     }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return letterGrades.count
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
     
-
+    
+    
     //When user touches out of edit box
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     
-    
-
     
     @IBAction func doneEditingBtn_Click(sender: UIButton) {
         
@@ -111,7 +112,9 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
             selectedItemIndex=0
             courseQualPtVal.text=""
             courseCredits.text=""
-
+            
+            managedObjectContext?.save(nil)
+            
             
             self.dismissViewControllerAnimated(true, completion: nil)
             
@@ -136,17 +139,10 @@ class EditCourseViewController: UIViewController, NSFetchedResultsControllerDele
         }
         
     }
-
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
