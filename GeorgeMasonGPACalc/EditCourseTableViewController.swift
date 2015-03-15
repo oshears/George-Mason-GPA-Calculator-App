@@ -126,19 +126,6 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField){
-        if textField==courseCredits{
-            self.view.frame.origin.y -= 150
-        }
-        
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField==courseCredits{
-            self.view.frame.origin.y += 150
-        }
-        
-    }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

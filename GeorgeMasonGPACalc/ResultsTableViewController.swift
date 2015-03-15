@@ -102,19 +102,6 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField){
-        if textField==self.totalCreditHours || textField==self.totalQualityPoints{
-            self.view.frame.origin.y -= 150
-        }
-        
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField==self.totalCreditHours || textField==self.totalQualityPoints{
-            self.view.frame.origin.y += 150
-        }
-        
-    }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 6){
             calcCumGPA_Clicked(UIButton())

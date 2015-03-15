@@ -114,19 +114,6 @@ class AddCourseTableViewController: UITableViewController {
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField){
-        if textField==courseCredit{
-            self.view.frame.origin.y -= 150
-        }
-        
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField==courseCredit{
-            self.view.frame.origin.y += 150
-        }
-        
-    }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
