@@ -120,17 +120,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IbF-rL-TI7">
-                                <rect key="frame" x="37" y="119" width="247" height="441"/>
+                                <rect key="frame" x="43" y="120" width="234" height="426.5"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-y5-g8K">
-                                <rect key="frame" x="55" y="28" width="211" height="20.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="211" id="thp-f4-4F7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="IOz-IM-gJt">
                                 <rect key="frame" x="133" y="0.0" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -139,38 +130,68 @@
                                     <action selector="nextScreen:" destination="jWx-Rv-JJt" eventType="touchUpInside" id="ZmR-gC-h18"/>
                                 </connections>
                             </pageControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gY-hf-uec">
-                                <rect key="frame" x="102" y="67" width="116" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VdY-Yn-fAa">
+                                <rect key="frame" x="37" y="75" width="247" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gY-hf-uec">
+                                        <rect key="frame" x="65" y="8" width="116" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="116" id="2X5-wC-j9z"/>
+                                        </constraints>
+                                        <state key="normal" title="Get Started">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="close:" destination="jWx-Rv-JJt" eventType="touchUpInside" id="yZc-hO-nm9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="oTH-GM-RuM"/>
+                                    <constraint firstAttribute="centerX" secondItem="0gY-hf-uec" secondAttribute="centerX" id="0aJ-6B-SUQ"/>
+                                    <constraint firstAttribute="height" constant="45" id="49g-jl-PqT"/>
+                                    <constraint firstAttribute="width" constant="247" id="LbY-W2-P2g"/>
+                                    <constraint firstAttribute="centerY" secondItem="0gY-hf-uec" secondAttribute="centerY" id="WgI-dF-PBt"/>
                                 </constraints>
-                                <state key="normal" title="Get Started">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="close:" destination="jWx-Rv-JJt" eventType="touchUpInside" id="yZc-hO-nm9"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcD-Ea-eOf">
+                                <rect key="frame" x="40" y="37" width="240" height="38.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-y5-g8K">
+                                        <rect key="frame" x="79" y="9" width="83" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="B4W-7d-iXt"/>
+                                    <constraint firstAttribute="centerY" secondItem="2ou-y5-g8K" secondAttribute="centerY" id="ObU-UB-Voi"/>
+                                    <constraint firstAttribute="height" constant="38.5" id="OwP-jY-6gQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="2ou-y5-g8K" secondAttribute="centerX" id="ywS-eT-Hid"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IbF-rL-TI7" firstAttribute="top" secondItem="Qi9-vw-852" secondAttribute="bottom" constant="99" id="1fk-Pg-CeP"/>
-                            <constraint firstItem="0gY-hf-uec" firstAttribute="top" secondItem="Qi9-vw-852" secondAttribute="bottom" constant="47" id="2Wg-uv-gP6"/>
-                            <constraint firstItem="IOz-IM-gJt" firstAttribute="top" secondItem="00s-IM-bjx" secondAttribute="top" id="4H0-4E-cjD"/>
-                            <constraint firstItem="qJ2-KP-lpL" firstAttribute="top" secondItem="IbF-rL-TI7" secondAttribute="bottom" constant="8" id="AYu-Lv-Pgf"/>
-                            <constraint firstItem="2ou-y5-g8K" firstAttribute="top" secondItem="IOz-IM-gJt" secondAttribute="bottom" constant="-9" id="BXX-oZ-VHq"/>
-                            <constraint firstAttribute="centerX" secondItem="IOz-IM-gJt" secondAttribute="centerX" id="Bdk-L7-M12"/>
-                            <constraint firstItem="IbF-rL-TI7" firstAttribute="leading" secondItem="00s-IM-bjx" secondAttribute="leadingMargin" constant="21" id="fPf-xe-g5F"/>
-                            <constraint firstAttribute="centerX" secondItem="0gY-hf-uec" secondAttribute="centerX" id="hnN-qH-ehU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IbF-rL-TI7" secondAttribute="trailing" constant="20" id="mKb-6N-SYE"/>
-                            <constraint firstAttribute="centerX" secondItem="2ou-y5-g8K" secondAttribute="centerX" id="vKE-W3-QyT"/>
+                            <constraint firstItem="IbF-rL-TI7" firstAttribute="leading" secondItem="00s-IM-bjx" secondAttribute="leadingMargin" constant="27" id="0GK-Bp-s4d"/>
+                            <constraint firstItem="IOz-IM-gJt" firstAttribute="top" secondItem="00s-IM-bjx" secondAttribute="topMargin" id="4NU-eU-39J"/>
+                            <constraint firstAttribute="centerX" secondItem="IOz-IM-gJt" secondAttribute="centerX" id="A96-ZY-lD2"/>
+                            <constraint firstItem="fcD-Ea-eOf" firstAttribute="top" secondItem="IOz-IM-gJt" secondAttribute="bottom" id="INg-GL-Dzw"/>
+                            <constraint firstItem="VdY-Yn-fAa" firstAttribute="top" secondItem="fcD-Ea-eOf" secondAttribute="bottom" id="OoF-7t-Pa0"/>
+                            <constraint firstItem="IbF-rL-TI7" firstAttribute="top" secondItem="VdY-Yn-fAa" secondAttribute="bottom" id="ghv-OV-sDs"/>
+                            <constraint firstAttribute="centerX" secondItem="fcD-Ea-eOf" secondAttribute="centerX" id="pdd-YN-UWL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IbF-rL-TI7" secondAttribute="trailing" constant="27" id="r2c-tM-j6m"/>
+                            <constraint firstItem="qJ2-KP-lpL" firstAttribute="top" secondItem="IbF-rL-TI7" secondAttribute="bottom" constant="21" id="r6m-Hp-HPt"/>
+                            <constraint firstAttribute="centerX" secondItem="VdY-Yn-fAa" secondAttribute="centerX" id="tqH-HB-B0J"/>
                         </constraints>
                     </view>
                     <connections>
@@ -182,7 +203,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uti-dH-9rT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="395" y="-1258"/>
+            <point key="canvasLocation" x="418" y="-1273"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
