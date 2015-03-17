@@ -32,6 +32,7 @@ class AddCourseTableViewController: UITableViewController {
         
         courseName.returnKeyType = UIReturnKeyType.Done
         courseCredit.returnKeyType = UIReturnKeyType.Done
+        
     }
 
     override func didReceiveMemoryWarning() {
