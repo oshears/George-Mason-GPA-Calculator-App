@@ -27,14 +27,14 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var fetchRequest = NSFetchRequest(entityName: "Course")
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as!
             AppDelegate).managedObjectContext {
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
             managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
             var e: NSError?
             var result = fetchResultController.performFetch(&e)
-            courses = fetchResultController.fetchedObjects as [Course]
+            courses = fetchResultController.fetchedObjects as! [Course]
             if result != true {
                 println(e?.localizedDescription)
             }
@@ -87,9 +87,9 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
             
             // Delete the row from the data source
-            if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
                 
-                let courseToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as Course
+                let courseToDelete = self.fetchResultController.objectAtIndexPath(indexPath) as! Course
                 managedObjectContext.deleteObject(courseToDelete)
                 
                 var e: NSError?
@@ -114,7 +114,7 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cellIdentifier = "Cell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as CustomCourseCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CustomCourseCell
         
         cell.courseName.text = courses[indexPath.row].title
         cell.courseCredits.text = "Credits: " + courses[indexPath.row].credits
@@ -124,25 +124,28 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController!) {
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
             self.tblCourses.beginUpdates()
     }
-    func controller(controller: NSFetchedResultsController!, didChangeObject anObject: AnyObject!,
-            atIndexPath indexPath: NSIndexPath!, forChangeType type: NSFetchedResultsChangeType,
-            newIndexPath: NSIndexPath!) {
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject,
+            atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType,
+            newIndexPath: NSIndexPath?) {
             switch type {
         case .Insert:
-            self.tblCourses.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Fade)
+            var myArray:[NSIndexPath!] = [newIndexPath]
+            self.tblCourses.insertRowsAtIndexPaths(myArray, withRowAnimation: UITableViewRowAnimation.Fade)
         case .Delete:
-            self.tblCourses.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            var myArray:[NSIndexPath!] = [indexPath]
+            self.tblCourses.deleteRowsAtIndexPaths(myArray, withRowAnimation: UITableViewRowAnimation.Fade)
         case .Update:
-            self.tblCourses.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            var myArray:[NSIndexPath!] = [indexPath]
+            self.tblCourses.reloadRowsAtIndexPaths(myArray, withRowAnimation: UITableViewRowAnimation.Fade)
         default:
             self.tblCourses.reloadData()
             }
-            courses = controller.fetchedObjects as [Course]
+            courses = controller.fetchedObjects as! [Course]
     }
-    func controllerDidChangeContent(controller: NSFetchedResultsController!) {
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
             self.tblCourses.endUpdates()
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -150,9 +153,9 @@ class CourseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             if let row = tblCourses.indexPathForSelectedRow()?.row {
                 //Get the destination navigation view controller
-                let destinationController = segue.destinationViewController as UINavigationController
+                let destinationController = segue.destinationViewController as! UINavigationController
                 //Get the view controller from the destination navigation controller
-                let newDestinationController = destinationController.viewControllers[0] as EditCourseTableViewController
+                let newDestinationController = destinationController.viewControllers[0]as! EditCourseTableViewController
                 let course:Course = courses[row]
                 newDestinationController.course = course
                 newDestinationController.selectedItemIndex = row

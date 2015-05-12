@@ -18,7 +18,7 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
     @IBOutlet weak var courseQualPtVal: UILabel!
     @IBOutlet weak var courseCredits: UITextField!
     
-    let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     
     var letterGrades = ["A+/A","A-","B+","B","B-","C+","C","C-","D","F"]
     var numberGrades = [4.00,3.67,3.33,3.00,2.67,2.33,2.00,1.67,1.00,0.00]
@@ -79,7 +79,7 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
     
     
     //When user touches out of edit box
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     

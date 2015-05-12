@@ -33,13 +33,13 @@ class HelpPageViewController: UIPageViewController, UIPageViewControllerDataSour
     
     func pageViewController(pageViewController: UIPageViewController,
         viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-            var index = (viewController as TutorialViewController).index
+            var index = (viewController as! TutorialViewController).index
             index++
             return self.viewControllerAtIndex(index)
     }
     func pageViewController(pageViewController: UIPageViewController,
         viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-            var index = (viewController as TutorialViewController).index
+            var index = (viewController as! TutorialViewController).index
             index--
             return self.viewControllerAtIndex(index)
     }

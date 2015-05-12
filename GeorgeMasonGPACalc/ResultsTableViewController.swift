@@ -38,14 +38,14 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         var fetchRequest = NSFetchRequest(entityName: "Course")
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
-        if let managedObjectContext = (UIApplication.sharedApplication().delegate as
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as!
             AppDelegate).managedObjectContext {
                 fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest,
                     managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
                 fetchResultController.delegate = self
                 var e: NSError?
                 var result = fetchResultController.performFetch(&e)
-                courses = fetchResultController.fetchedObjects as [Course]
+                courses = fetchResultController.fetchedObjects as! [Course]
                 if result != true {
                     println(e?.localizedDescription)
                 } }
@@ -59,7 +59,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         }
         totalCredits.text="\(sumCredits)"
         totalPoints.text="\(sumPoints)"
-        gpa.text=NSString(format:"%.02f",(sumPoints/sumCredits))
+        gpa.text=NSString(format:"%.02f",(sumPoints/sumCredits)) as String
         if gpa.text == "nan"{
             gpa.text = "0.00"
         }
@@ -70,8 +70,9 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
+
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool{
@@ -88,7 +89,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         
         var cummulativeGpa = allPoints/allCreds as Float
         
-        cumGpa.text=NSString(format:"%.02f",(cummulativeGpa))
+        cumGpa.text=NSString(format:"%.02f",(cummulativeGpa)) as String
         if cumGpa.text == "nan"{
             cumGpa.text = "0.00"
         }

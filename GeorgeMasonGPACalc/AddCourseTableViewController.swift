@@ -58,7 +58,7 @@ class AddCourseTableViewController: UITableViewController {
     
     
     //When user touches out of edit box
-    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         self.view.endEditing(true)
     }
     
@@ -78,10 +78,10 @@ class AddCourseTableViewController: UITableViewController {
             var eString="\(result)"
             
             
-            if let managedObjectContext = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext {
+            if let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext {
                 
                 var course = NSEntityDescription.insertNewObjectForEntityForName("Course",
-                    inManagedObjectContext: managedObjectContext) as Course
+                    inManagedObjectContext: managedObjectContext) as! Course
                 course.title = aString
                 course.grade = bString
                 course.qualitypointvalue = cString

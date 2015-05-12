@@ -48,7 +48,7 @@ class TutorialViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func nextScreen(sender: AnyObject) {
-        let pageViewController = self.parentViewController as HelpPageViewController
+        let pageViewController = self.parentViewController as! HelpPageViewController
         pageViewController.forward(index)
     }
 
