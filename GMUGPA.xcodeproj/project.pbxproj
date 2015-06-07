@@ -74,6 +74,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80459D5C1B02BDD000BFA30C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80DBDF541A4C763300601CE9 /* CourseViewController.swift */,
+				800B9A0A1AB2836D007156FF /* EditCourseTableViewController.swift */,
+				80F6CAEA1AB50505007FD3CC /* ResultsTableViewController.swift */,
+				80F6CAE81AB50333007FD3CC /* AddCourseTableViewController.swift */,
+				80459D5D1B02BDEB00BFA30C /* Help Controllers */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		80459D5D1B02BDEB00BFA30C /* Help Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				80F6CAEC1AB50C7A007FD3CC /* HelpPageViewController.swift */,
+				80AB1CA81A79C4C6007377C1 /* TutorialViewController.swift */,
+			);
+			name = "Help Controllers";
+			sourceTree = "<group>";
+		};
+		80459D5E1B02BE0100BFA30C /* Additional Swift Files */ = {
+			isa = PBXGroup;
+			children = (
+				800B9A041AB22FD4007156FF /* Course.swift */,
+				80CD8F131A57B406003EC40A /* CustomCourseCell.swift */,
+				80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */,
+			);
+			name = "Additional Swift Files";
+			sourceTree = "<group>";
+		};
 		80DBDF441A4C763300601CE9 = {
 			isa = PBXGroup;
 			children = (
@@ -96,19 +127,12 @@
 			isa = PBXGroup;
 			children = (
 				80DBDF521A4C763300601CE9 /* AppDelegate.swift */,
-				80DBDF541A4C763300601CE9 /* CourseViewController.swift */,
-				800B9A0A1AB2836D007156FF /* EditCourseTableViewController.swift */,
-				80F6CAEA1AB50505007FD3CC /* ResultsTableViewController.swift */,
-				80F6CAE81AB50333007FD3CC /* AddCourseTableViewController.swift */,
-				80F6CAEC1AB50C7A007FD3CC /* HelpPageViewController.swift */,
-				80AB1CA81A79C4C6007377C1 /* TutorialViewController.swift */,
 				80DBDF581A4C763300601CE9 /* Main.storyboard */,
+				80459D5E1B02BE0100BFA30C /* Additional Swift Files */,
+				80459D5C1B02BDD000BFA30C /* View Controllers */,
 				80DBDF5B1A4C763300601CE9 /* Images.xcassets */,
 				80DBDF5D1A4C763300601CE9 /* LaunchScreen.xib */,
 				80DBDF501A4C763300601CE9 /* Supporting Files */,
-				800B9A041AB22FD4007156FF /* Course.swift */,
-				80CD8F131A57B406003EC40A /* CustomCourseCell.swift */,
-				80AB1CAA1A79CA4C007377C1 /* CustomTextBox.swift */,
 				800B9A011AB22F33007156FF /* GMUGPA.xcdatamodeld */,
 			);
 			path = GeorgeMasonGPACalc;
