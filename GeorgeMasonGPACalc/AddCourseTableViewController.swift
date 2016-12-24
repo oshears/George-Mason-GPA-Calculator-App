@@ -58,7 +58,7 @@ class AddCourseTableViewController: UITableViewController {
     
     
     //When user touches out of edit box
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -89,8 +89,8 @@ class AddCourseTableViewController: UITableViewController {
                 course.qualitypoints = eString
                 
                 var e: NSError?
-                if managedObjectContext.save(&e) != true {
-                    println("insert error: \(e!.localizedDescription)")
+                if managedObjectContext.save() != true {
+                    print("insert error: \(e!.localizedDescription)")
                     return
                 }
             }

@@ -47,10 +47,10 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
             courseQualPtVal.text = course.qualitypointvalue
             courseCredits.text = course.credits
             
-            var pickerSelectNum = course.grade
+            let pickerSelectNum = course.grade
             
             
-            if let index = find(self.letterGrades, pickerSelectNum){
+            if let index = self.letterGrades.indexOf(pickerSelectNum){
                 self.courseGradePicker.selectRow(index, inComponent: 0, animated: false)
                 selectedItemIndex = index
             }
@@ -79,7 +79,7 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
     
     
     //When user touches out of edit box
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
@@ -113,7 +113,10 @@ class EditCourseTableViewController: UITableViewController, UIPickerViewDataSour
             courseQualPtVal.text=""
             courseCredits.text=""
             
-            managedObjectContext?.save(nil)
+            do {
+                try managedObjectContext?.save()
+            } catch _ {
+            }
             
             
             self.dismissViewControllerAnimated(true, completion: nil)

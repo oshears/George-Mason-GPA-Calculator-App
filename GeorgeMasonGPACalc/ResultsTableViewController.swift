@@ -35,7 +35,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         super.viewDidAppear(true)
         
         
-        var fetchRequest = NSFetchRequest(entityName: "Course")
+        let fetchRequest = NSFetchRequest(entityName: "Course")
         let sortDescriptor = NSSortDescriptor(key: "title", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as!
@@ -44,10 +44,17 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
                     managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
                 fetchResultController.delegate = self
                 var e: NSError?
-                var result = fetchResultController.performFetch(&e)
+                var result: Bool
+                do {
+                    try fetchResultController.performFetch()
+                    result = true
+                } catch let error as NSError {
+                    e = error
+                    result = false
+                }
                 courses = fetchResultController.fetchedObjects as! [Course]
                 if result != true {
-                    println(e?.localizedDescription)
+                    print(e?.localizedDescription)
                 } }
         
         
@@ -70,7 +77,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
 
     }
@@ -87,7 +94,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
         var allPoints = 0 as Float
         allPoints=(totalPoints.text! as NSString).floatValue + (self.totalQualityPoints.text! as NSString).floatValue
         
-        var cummulativeGpa = allPoints/allCreds as Float
+        let cummulativeGpa = allPoints/allCreds as Float
         
         cumGpa.text=NSString(format:"%.02f",(cummulativeGpa)) as String
         if cumGpa.text == "nan"{
@@ -98,7 +105,7 @@ class ResultsTableViewController: UITableViewController, NSFetchedResultsControl
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool{
-        print("Enter Pressed")
+        print("Enter Pressed", terminator: "")
         textField.endEditing(true)
         return true
     }
